@@ -19,10 +19,8 @@ img {
   border-radius: 5px;
 }
 @media (prefers-color-scheme: dark) {
-  section {
-    color: white;
-  }
   body {
+    color: white;
     background-color: #131417;
   }
 }
