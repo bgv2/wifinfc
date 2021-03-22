@@ -1,5 +1,5 @@
-new ClipboardJS("#bar");
-let closer = new ClipboardJS("#done");
+new ClipboardJS("#copier");
+let closer = new ClipboardJS("#closer");
 let url = new URL(window.location.href);
 
 function blankpage() {
