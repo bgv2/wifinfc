@@ -12,6 +12,7 @@ ol {
 }
 .btn {
   font-size: 3.125rem;
+  width: 100vw;
 }
 img {
   width: 1.5rem;
