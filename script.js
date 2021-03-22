@@ -1,9 +1,12 @@
-new ClipboardJS(".btn");
+new ClipboardJS("#bar");
+let closer = new ClipboardJS("#done");
 let url = new URL(window.location.href);
 
 function blankpage() {
   window.location.replace("about:blank");
 }
+
+closer.on("success", e => { blankpage() })
 
 let ssid = url.searchParams.get("ssid") || "";
 if (ssid) ssid = decode(ssid);
