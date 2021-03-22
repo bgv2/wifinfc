@@ -3,14 +3,18 @@ let closer = new ClipboardJS("#closer");
 let url = new URL(window.location.href);
 
 function blankpage() {
-  window.location.replace("about:blank");
+  window.location.replace("close.html");
 }
 
-closer.on("success", e => { blankpage() })
+closer.on("success", _e => { blankpage() })
 
-let ssid = url.searchParams.get("ssid") || "";
-if (ssid) ssid = decode(ssid);
-document.querySelector(".ssid").innerHTML = ssid;
+let ssid = url.searchParams.get("ssid");
+if (ssid && decode(ssid)) {
+  ssid = decode(ssid);
+  document.querySelector(".ssid").innerHTML += ` to ${ssid}`;
+  document.getElementById("select-ssid").innerHTML = `<kbd>${ssid || document.getElementById("select-ssid").innerHTML}</kbd>`;
+}
+document.querySelector(".ssid").innerHTML += "!";
 
 function al() {
   let c = url.searchParams.get("pw");
@@ -19,9 +23,6 @@ function al() {
     response = decode(response);
     // fill in input field with decoded password
     document.getElementById("bar").value = response;
-  } else {
-    document.getElementById("bar").value =
-    "error: password not copied properly";
   }
 }
 
