@@ -3,7 +3,8 @@ let closer = new ClipboardJS("#closer");
 let url = new URL(window.location.href);
 
 function blankpage() {
-  window.location.replace("close.html");
+  //window.location.replace("close.html");
+  window.open(location.href, "_self").close();
 }
 
 closer.on("success", _e => { blankpage() })
