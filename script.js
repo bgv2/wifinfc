@@ -4,7 +4,7 @@ let url = new URL(window.location.href);
 
 function blankpage() {
   //window.location.replace("close.html");
-  window.open(location.href, "_self").close();
+  window.open(location.href, "_self","",true).close();
 }
 
 closer.on("success", _e => { blankpage() })
