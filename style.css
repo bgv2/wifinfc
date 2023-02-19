@@ -22,7 +22,7 @@ img {
 }
 
 @media (prefers-color-scheme: dark) {
-  main {
+  main, h1, p {
     color: white;
   }
 
