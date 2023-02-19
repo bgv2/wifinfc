@@ -7,6 +7,7 @@
   /*display: none;*/
   color: white;
 }
+
 /*
 ol {
   font-size: 1.25rem;
@@ -19,10 +20,12 @@ img {
   width: 1.5rem;
   border-radius: 5px;
 }
+
 @media (prefers-color-scheme: dark) {
   main {
     color: white;
   }
+
   body {
     background-color: #131417;
   }
