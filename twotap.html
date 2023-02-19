@@ -11,7 +11,10 @@
 </head>
 
 <body>
-    <canvas id="qr"></canvas>
+    <h1 class="ssid text-center">👋 Welcome</h3>
+    <p>Long press the QR code below.<br>Then press <b>Connect to Wi-Fi</b>.</p>
+    <img id="longpress" src="" alt="WiFi QR Code (long press me)">
+    <canvas id="qrcanvas"></canvas>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script src="script.js"></script>
@@ -19,9 +22,14 @@
         (function () {
             let url = new URL(window.location);
             let qr = new QRious({
-                element: document.getElementById('qr'),
+                element: document.getElementById('qrcanvas'),
                 value: `WIFI:T:WPA;S:${decode(url.searchParams.get("ssid"))};P:${decode(url.searchParams.get("pw"))};;`
             });
+            document.getElementById('qrcanvas').style.opacity = "0";
+            // document.write(document.getElementById('qrcanvas').toDataURL())
+            document.getElementById("longpress").src = document.getElementById('qrcanvas').toDataURL()
+            document.getElementById("longpress").style.width = "300px"
+            document.getElementById("longpress").style.filter;
         })();
     </script>
 </body>
