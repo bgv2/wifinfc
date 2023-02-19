@@ -6,18 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
-    <script src="script.js"></script>
+
     <title>Connect to Wi-Fi Network</title>
 </head>
 
 <body>
-    <canvas class="qr"></canvas>
+    <canvas id="qr"></canvas>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="script.js"></script>
     <script>
         (function () {
-            var qr = new QRious({
+            let url = new URL(window.location);
+            let qr = new QRious({
                 element: document.getElementById('qr'),
-                value: 'https://github.com/neocotic/qrious'
+                value: `WIFI:T:WPA;S:${decode(url.searchParams.get("ssid"))};P:${decode(url.searchParams.get("pw"))};;`
             });
         })();
     </script>
