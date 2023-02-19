@@ -1,7 +1,10 @@
 /*body {
   font-size: 100%;
 }*/
-
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 1.5rem;
+}
 .hide {
   opacity: 0;
   /*display: none;*/
