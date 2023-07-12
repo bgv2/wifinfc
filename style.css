@@ -25,6 +25,7 @@ img {
 }
 #longpress {
   image-rendering: crisp-edges;
+  width: 300px;
 }
 
 @media (prefers-color-scheme: dark) {
