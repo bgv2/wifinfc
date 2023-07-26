@@ -38,3 +38,11 @@ function decode(str) {
   str.replaceAll("_", "/");
   return decodeURIComponent(atob(str));
 }
+
+function setup() {
+  let ssid = encode(prompt("What is the name of your WiFi network?"));
+  let pw = encode(prompt(`What is the password for "${decode(ssid}"?`);
+  let u = new URL(window.location);
+  u.search = new URLSearchParams({ssid, pw}).toString();
+  alert(u.toString());
+}
